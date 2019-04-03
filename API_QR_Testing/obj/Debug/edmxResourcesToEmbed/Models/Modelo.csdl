@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ASIST_LISTAEVENTO">
+    <Key>
+      <PropertyRef Name="ID_LISTA" />
+    </Key>
+    <Property Name="ID_LISTA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID_EVENTO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID_ENTIDAD" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ASISTE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="NUMERO_ACOMP" Type="Int16" />
+    <NavigationProperty Name="ASIST_EVENTOS" Relationship="Model.ASIST_LISTAEVENTO_CON" FromRole="ASIST_LISTAEVENTO" ToRole="ASIST_EVENTOS" />
+  </EntityType>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ASIST_LISTAEVENTO" EntityType="Self.ASIST_LISTAEVENTO" />
+    <EntitySet Name="ASIST_DETALLE_EVENTOS" EntityType="Model.ASIST_DETALLE_EVENTOS" />
+    <EntitySet Name="ASIST_EVENTOS" EntityType="Model.ASIST_EVENTOS" />
+    <AssociationSet Name="ASIST_LISTAEVENTO_CON" Association="Model.ASIST_LISTAEVENTO_CON">
+      <End Role="ASIST_EVENTOS" EntitySet="ASIST_EVENTOS" />
+      <End Role="ASIST_LISTAEVENTO" EntitySet="ASIST_LISTAEVENTO" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ASIST_DETALLE_EVENTOS">
+    <Key>
+      <PropertyRef Name="ID_DETALLE" />
+    </Key>
+    <Property Name="ID_DETALLE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ID_EVENTO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="REALIZO_LLAMADA" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="CANT_IDENT" Type="Int16" />
+    <Property Name="FECHA_LLAMADA" Type="DateTime" />
+    <Property Name="HORA_LLAMADA" Type="DateTime" Precision="6" />
+    <Property Name="TIPO_CONFIRMACION" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ASIST_EVENTOS">
+    <Key>
+      <PropertyRef Name="ID_EVENTO" />
+    </Key>
+    <Property Name="ID_EVENTO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="NOMBRE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="FECHA" Type="DateTime" />
+    <Property Name="HORA" Type="DateTime" Precision="6" />
+    <Property Name="LUGAR" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ASIST_LISTAEVENTO" Relationship="Model.ASIST_LISTAEVENTO_CON" FromRole="ASIST_EVENTOS" ToRole="ASIST_LISTAEVENTO" />
+  </EntityType>
+  <Association Name="ASIST_LISTAEVENTO_CON">
+    <End Type="Model.ASIST_EVENTOS" Role="ASIST_EVENTOS" Multiplicity="1" />
+    <End Type="Model.ASIST_LISTAEVENTO" Role="ASIST_LISTAEVENTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ASIST_EVENTOS">
+        <PropertyRef Name="ID_EVENTO" />
+      </Principal>
+      <Dependent Role="ASIST_LISTAEVENTO">
+        <PropertyRef Name="ID_EVENTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

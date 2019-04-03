@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EventosModelStoreContainer" CdmEntityContainer="EventosEntities">
+    <EntitySetMapping Name="ASIST_LISTAEVENTO">
+      <EntityTypeMapping TypeName="EventosModel.ASIST_LISTAEVENTO">
+        <MappingFragment StoreEntitySet="ASIST_LISTAEVENTO">
+          <ScalarProperty Name="ID_LISTA" ColumnName="ID_LISTA" />
+          <ScalarProperty Name="ID_EVENTO" ColumnName="ID_EVENTO" />
+          <ScalarProperty Name="ASISTE" ColumnName="ASISTE" />
+          <ScalarProperty Name="NUMERO_ACOMP" ColumnName="NUMERO_ACOMP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EVENTOS">
+      <EntityTypeMapping TypeName="EventosModel.EVENTOS">
+        <MappingFragment StoreEntitySet="EVENTOS">
+          <ScalarProperty Name="ID_EVENTO" ColumnName="ID_EVENTO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="HORA" ColumnName="HORA" />
+          <ScalarProperty Name="LUGAR" ColumnName="LUGAR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
