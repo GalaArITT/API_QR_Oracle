@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="EntitiesOracle">
+    <EntitySetMapping Name="ASIST_LISTAEVENTO">
+      <EntityTypeMapping TypeName="Model.ASIST_LISTAEVENTO">
+        <MappingFragment StoreEntitySet="ASIST_LISTAEVENTO">
+          <ScalarProperty Name="ID_LISTA" ColumnName="ID_LISTA" />
+          <ScalarProperty Name="ID_EVENTO" ColumnName="ID_EVENTO" />
+          <ScalarProperty Name="ID_ENTIDAD" ColumnName="ID_ENTIDAD" />
+          <ScalarProperty Name="ASISTE" ColumnName="ASISTE" />
+          <ScalarProperty Name="NUMERO_ACOMP" ColumnName="NUMERO_ACOMP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

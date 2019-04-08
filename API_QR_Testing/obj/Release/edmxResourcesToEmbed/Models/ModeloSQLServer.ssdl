@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EventosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ASIST_LISTAEVENTO">
+    <Key>
+      <PropertyRef Name="ID_LISTA" />
+    </Key>
+    <Property Name="ID_LISTA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_EVENTO" Type="int" />
+    <Property Name="ASISTE" Type="varchar" MaxLength="2" />
+    <Property Name="NUMERO_ACOMP" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="EVENTOS">
+    <Key>
+      <PropertyRef Name="ID_EVENTO" />
+    </Key>
+    <Property Name="ID_EVENTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
+    <Property Name="FECHA" Type="datetime2" Precision="7" />
+    <Property Name="HORA" Type="varchar" MaxLength="15" />
+    <Property Name="LUGAR" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_EVENTOS">
+    <End Role="EVENTOS" Type="Self.EVENTOS" Multiplicity="0..1" />
+    <End Role="ASIST_LISTAEVENTO" Type="Self.ASIST_LISTAEVENTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EVENTOS">
+        <PropertyRef Name="ID_EVENTO" />
+      </Principal>
+      <Dependent Role="ASIST_LISTAEVENTO">
+        <PropertyRef Name="ID_EVENTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EventosModelStoreContainer">
+    <EntitySet Name="ASIST_LISTAEVENTO" EntityType="Self.ASIST_LISTAEVENTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EVENTOS" EntityType="Self.EVENTOS" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_EVENTOS" Association="Self.FK_EVENTOS">
+      <End Role="EVENTOS" EntitySet="EVENTOS" />
+      <End Role="ASIST_LISTAEVENTO" EntitySet="ASIST_LISTAEVENTO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -50,11 +50,11 @@ namespace API_QR_Testing.Controllers
             }
 
             //db.Entry(aSIST_LISTAEVENTO).State = EntityState.Modified;
-            //hace cambios de todos. 
+            //hace cambios de todos.
             var consulta = (from p in db.ASIST_LISTAEVENTO
                             where p.ID_LISTA == id
                             select p).SingleOrDefault();
-            consulta.ASISTE = null;
+            consulta.ASISTE = "S";
 
             try
             {
