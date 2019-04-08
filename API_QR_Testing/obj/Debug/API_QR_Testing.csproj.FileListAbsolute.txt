@@ -196,7 +196,6 @@ C:\Users\ogalaviz\source\repos\API_QR_Oracle\API_QR_Testing\bin\es\System.Web.Ra
 C:\Users\ogalaviz\source\repos\API_QR_Oracle\API_QR_Testing\bin\es\System.Web.WebPages.resources.dll
 C:\Users\ogalaviz\source\repos\API_QR_Oracle\API_QR_Testing\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\ogalaviz\source\repos\API_QR_Oracle\API_QR_Testing\bin\es\System.Web.WebPages.Razor.resources.dll
-C:\Users\ogalaviz\source\repos\API_QR_Oracle\API_QR_Testing\obj\Debug\API_QR_Testing.csprojAssemblyReference.cache
 C:\Users\ogalaviz\source\repos\API_QR_Oracle\API_QR_Testing\obj\Debug\API_QR_Testing.csproj.CoreCompileInputs.cache
 C:\Users\ogalaviz\source\repos\API_QR_Oracle\API_QR_Testing\obj\Debug\API_QR_Testing.csproj.CopyComplete
 C:\Users\ogalaviz\source\repos\API_QR_Oracle\API_QR_Testing\obj\Debug\API_QR_Testing.dll
