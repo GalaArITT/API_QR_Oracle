@@ -64,6 +64,11 @@ namespace API_QR_Testing.Controllers
             {
                 return Ok("Anteriormente Registrada");
             }
+            //consulta contadora de registros
+            var contador = (from p in db.ASIST_LISTAEVENTO
+                            where p.ASISTE == "S"
+                            select p).Count();
+
             try
             {
                 db.SaveChanges();
