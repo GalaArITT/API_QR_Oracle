@@ -7,11 +7,14 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using API_QR_Testing.Models;
 
 namespace API_QR_Testing.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [RoutePrefix("api/ControlAsistencias")]
     public class ControlAsistenciasController : ApiController
     {
         private EntitiesOracle db = new EntitiesOracle();
@@ -37,18 +40,17 @@ namespace API_QR_Testing.Controllers
 
         // PUT: api/ControlAsistencias/5
         [ResponseType(typeof(void))]
+ 
         public IHttpActionResult PutASIST_LISTAEVENTO(decimal id, ASIST_LISTAEVENTO aSIST_LISTAEVENTO)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
             if (id != aSIST_LISTAEVENTO.ID_LISTA)
             {
                 return BadRequest();
             }
-
             //db.Entry(aSIST_LISTAEVENTO).State = EntityState.Modified;
             //hace cambios de todos.
             if (aSIST_LISTAEVENTO.ASISTE == null)
@@ -60,7 +62,7 @@ namespace API_QR_Testing.Controllers
             }
             else
             {
-                return StatusCode(HttpStatusCode.NotModified);
+                return Ok("La asistencia ya está registrada");
             }
             try
             {
@@ -77,8 +79,7 @@ namespace API_QR_Testing.Controllers
                     throw;
                 }
             }
-
-            return StatusCode(HttpStatusCode.NoContent);
+            return Ok("Asistencia capturada correctamente");
         }
 
         // POST: api/ControlAsistencias

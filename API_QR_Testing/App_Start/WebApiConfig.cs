@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace API_QR_Testing
 {
@@ -11,7 +12,9 @@ namespace API_QR_Testing
         public static void Register(HttpConfiguration config)
         {
             // Configuración y servicios de API web
-
+            var corsAttr = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(corsAttr);
+ 
             // Rutas de API web
             config.MapHttpAttributeRoutes();
 
