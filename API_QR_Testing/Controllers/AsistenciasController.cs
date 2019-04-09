@@ -36,6 +36,7 @@ namespace API_QR_Testing.Controllers
         }
         */
         // PUT: api/Asistencias/5
+        [HttpPut]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutASIST_LISTAEVENTO(int id, ASIST_LISTAEVENTO aSIST_LISTAEVENTO)
         {
@@ -72,7 +73,7 @@ namespace API_QR_Testing.Controllers
 
             return StatusCode(HttpStatusCode.NoContent);
         }
-        /*
+        
         // POST: api/Asistencias
         [ResponseType(typeof(ASIST_LISTAEVENTO))]
         public IHttpActionResult PostASIST_LISTAEVENTO(ASIST_LISTAEVENTO aSIST_LISTAEVENTO)
@@ -102,7 +103,7 @@ namespace API_QR_Testing.Controllers
             db.SaveChanges();
 
             return Ok(aSIST_LISTAEVENTO);
-        }*/
+        }
 
         protected override void Dispose(bool disposing)
         {

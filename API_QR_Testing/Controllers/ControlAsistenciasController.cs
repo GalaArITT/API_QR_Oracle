@@ -62,7 +62,7 @@ namespace API_QR_Testing.Controllers
             }
             else
             {
-                return Ok("La asistencia ya está registrada");
+                return Ok("Anteriormente Registrada");
             }
             try
             {
@@ -79,7 +79,7 @@ namespace API_QR_Testing.Controllers
                     throw;
                 }
             }
-            return Ok("Asistencia capturada correctamente");
+            return Ok("Asistencia Registrada");
         }
 
         // POST: api/ControlAsistencias

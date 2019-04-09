@@ -205,3 +205,6 @@ C:\Users\Oliver\source\repos\API_QR_Oracle\API_QR_Testing\obj\Release\API_QR_Tes
 C:\Users\Oliver\source\repos\API_QR_Oracle\API_QR_Testing\bin\System.Web.Cors.dll
 C:\Users\Oliver\source\repos\API_QR_Oracle\API_QR_Testing\bin\System.Web.Http.Cors.dll
 C:\Users\Oliver\source\repos\API_QR_Oracle\API_QR_Testing\bin\System.Web.Http.Cors.xml
+C:\Users\ogalaviz\source\repos\API_QR_Oracle\API_QR_Testing\bin\System.Web.Cors.dll
+C:\Users\ogalaviz\source\repos\API_QR_Oracle\API_QR_Testing\bin\System.Web.Http.Cors.dll
+C:\Users\ogalaviz\source\repos\API_QR_Oracle\API_QR_Testing\bin\System.Web.Http.Cors.xml
