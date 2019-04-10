@@ -51,8 +51,6 @@ namespace API_QR_Testing.Controllers
             {
                 return BadRequest();
             }
-            //db.Entry(aSIST_LISTAEVENTO).State = EntityState.Modified;
-            //hace cambios de todos.
             if (aSIST_LISTAEVENTO.ASISTE == null)
             {
                 var consulta = (from p in db.ASIST_LISTAEVENTO
@@ -68,7 +66,6 @@ namespace API_QR_Testing.Controllers
             var contador = (from p in db.ASIST_LISTAEVENTO
                             where p.ASISTE == "S"
                             select p).Count();
-
             try
             {
                 db.SaveChanges();
